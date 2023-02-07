@@ -1,0 +1,64 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.boletos{
+    padding: 5rem 0;
+    h3{
+        text-align: center;
+        color: v.$blanco;
+       
+    }
+}
+
+.bg-verde{
+    background-color: v.$verde;
+}
+    
+
+.contenedor-boletos{
+   @include m.tablet{
+    @include m.grid(2,2rem)
+   }
+}
+
+.basico-pase,
+.premium-pase{
+    .pase-titulo{
+        margin: 1rem;
+       }
+    p{
+        text-align: center;
+        color: v.$blanco;
+        padding: .5rem;
+        margin: 0;
+        font-size: 2.8rem;
+      
+        .footer__p-negrita{
+            font-weight: 700;
+            font-size: 2.4rem;
+        }
+    }
+    .uppercase{
+        text-transform: uppercase;
+    }
+    .pase-header{
+        background-color: v.$rosa;
+      
+    }
+    .pase-footer{
+        background-color: v.$morado;
+    }
+}
+
+.pase-body{
+    background-color: v.$blanco;
+    ul{
+        @include m.resetearlista;
+        li,
+        :nth-child(odd){
+            background-color: v.$blanco;
+            padding: 1rem;
+            border-bottom: 1px solid #e1e1e1;
+        }
+    }
+}
